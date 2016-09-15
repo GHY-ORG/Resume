@@ -1,0 +1,93 @@
+﻿@model BaoMing.Models.XczsModels
+@{
+    ViewBag.Title = "西财之声-简历投递";
+}
+<div class="main-z">
+    <div class="row">
+        <div class="know1 col-md-12">
+            <div class="knowUs">
+                西财之声-简历投递<span>加 * 的为必填项</span>
+            </div>
+            <div class="knowUs1">
+                SUBMITING RESUME
+            </div>
+            <div class="know-line">
+            </div>
+        </div>
+    </div>
+    <div class="row submit-content">
+        <div class="col-md-12">
+            @using (Html.BeginForm("Xczs", "BaoMing", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                <h3 class="bm_title_3">
+                    个人信息
+                </h3>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Name, new { @class = "col-md-2 col-xs-3 control-label bm_lable_in" })
+                    <div class="col-md-10  col-xs-9">
+                        @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Sex, new { @class = "col-md-2 col-xs-3 control-label bm_lable_in" })
+                    <div class="col-md-10 col-xs-9">
+                        @Html.EditorFor(m => m.Sex, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(m => m.Sex, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Grademajor, new { @class = "col-md-2 col-xs-3 control-label bm_lable_in" })
+                    <div class="col-md-10 col-xs-9">
+                        @Html.EditorFor(m => m.Grademajor, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(m => m.Grademajor, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Phone, new { @class = "col-md-2 col-xs-3 control-label bm_lable_in" })
+                    <div class="col-md-10 col-xs-9">
+                        @Html.EditorFor(m => m.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <h3 class="bm_title_3">
+                    意向部门(可以多选哦):
+                </h3>
+                //提示意向部门未被选中
+                @Html.ValidationMessage("yixiang", "", new { @class = "text-danger" })
+                <div class="zhiyuan-k col-md-12">
+                    <div class="zhiyuan-p col-md-3 col-sm-6 col-xs-12">
+                        @Html.CheckBoxFor(m => m.BoYin.Checked, new { @class = "form-control chk" })
+                        <label class="control-label chk_label" for="BoYin_Checked"></label>
+                        @Html.LabelFor(m => m.BoYin, new { @class = "control-label" })
+                    </div>
+                    <div class="zhiyuan-p col-md-3 col-sm-6 col-xs-12">
+                        @Html.CheckBoxFor(m => m.WaiLian.Checked, new { @class = "form-control chk" })
+                        <label class="control-label chk_label" for="WaiLian_Checked"></label>
+                        @Html.LabelFor(m => m.WaiLian, new { @class = "control-label" })
+                    </div>
+                    <div class="zhiyuan-p col-md-3 col-sm-6 col-xs-12">
+                        @Html.CheckBoxFor(m => m.BianJi.Checked, new { @class = "form-control chk" })
+                        <label class="control-label chk_label" for="BianJi_Checked"></label>
+                        @Html.LabelFor(m => m.BianJi, new { @class = "control-label" })
+                    </div>
+                    <div class="zhiyuan-p col-md-3 col-sm-6 col-xs-12">
+                        @Html.CheckBoxFor(m => m.XuanChuan.Checked, new { @class = "form-control chk" })
+                        <label class="control-label chk_label" for="XuanChuan_Checked"></label>
+                        @Html.LabelFor(m => m.XuanChuan, new { @class = "control-label" })
+                    </div>
+                    <div class="zhiyuan-p col-md-3 col-sm-6 col-xs-12">
+                        @Html.CheckBoxFor(m => m.ShiWu.Checked, new { @class = "form-control chk" })
+                        <label class="control-label chk_label" for="ShiWu_Checked"></label>
+                        @Html.LabelFor(m => m.ShiWu, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group" id="submit">
+                    <div class="col-md-offset-1 col-md-2">
+                        <input type="submit" class="btn btn-default" value="提交" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

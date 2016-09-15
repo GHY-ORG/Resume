@@ -1,0 +1,117 @@
+﻿@model BaoMing.Models.XmtzxModels
+@{
+    ViewBag.Title = "新媒体中心-简历投递";
+}
+<div class="main-z">
+    <div class="row">
+        <div class="know1 col-md-12">
+            <div class="knowUs">
+                新媒体中心-简历投递<span>加 * 的为必填项</span>
+            </div>
+            <div class="knowUs1">
+                SUBMITING RESUME
+            </div>
+            <div class="know-line">
+            </div>
+        </div>
+    </div>
+    <div class="row submit-content">
+        <div class="col-md-12">
+            @using (Html.BeginForm("Xmtzx", "BaoMing", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                <h3 class="bm_title_3">
+                    个人信息
+                </h3>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Name, new { @class = "col-md-2 col-xs-3 control-label bm_lable_in" })
+                    <div class="col-md-10  col-xs-9">
+                        @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Sex, new { @class = "col-md-2 col-xs-3 control-label bm_lable_in" })
+                    <div class="col-md-10 col-xs-9">
+                        @Html.EditorFor(m => m.Sex, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(m => m.Sex, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Phone, new { @class = "col-md-2 col-xs-3 control-label bm_lable_in" })
+                    <div class="col-md-10 col-xs-9">
+                        @Html.EditorFor(m => m.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Birth, new { @class = "col-md-2 col-xs-3 control-label bm_lable_in" })
+                    <div class="col-md-10 col-xs-9">
+                        @Html.EditorFor(m => m.Birth, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                        @Html.ValidationMessageFor(m => m.Birth, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Grademajor, new { @class = "col-md-2 col-xs-3 control-label bm_lable_in" })
+                    <div class="col-md-10 col-xs-9">
+                        @Html.EditorFor(m => m.Grademajor, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(m => m.Grademajor, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.TeChang, new { @class = "col-md-2 col-xs-3 control-label bm_lable_in" })
+                    <div class="col-md-10 col-xs-9">
+                        @Html.EditorFor(m => m.TeChang, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(m => m.TeChang, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ZhiWu, new { @class = "col-md-2 col-xs-3 control-label bm_lable_in_long" })
+                    <div class="col-md-10 col-xs-9">
+                        @Html.EditorFor(m => m.ZhiWu, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(m => m.ZhiWu, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.BuMen, new { @class = "col-md-2 col-xs-3 control-label bm_lable_in" })
+                    <div class="col-md-10 col-xs-9">
+                        @Html.EditorFor(m => m.BuMen, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(m => m.BuMen, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.TiaoJi, new { @class = "col-md-2 col-xs-3 control-label bm_lable_in" })
+                    <div class="col-md-10 col-xs-9">
+                        @Html.EditorFor(m => m.TiaoJi, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(m => m.TiaoJi, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <h3 class="bm_title_3">
+                    请用一句话介绍自己:
+                </h3>
+                <div class="zhiyuan-p zhiyuan-textarea col-md-12">
+                    @Html.TextAreaFor(m => m.Que1, new { @class = "form-control", id = "teChang", rows = "4", cols = "5" })
+                    @Html.ValidationMessageFor(m => m.Que1, "", new { @class = "text-danger" })
+                </div>
+                <h3 class="bm_title_3">
+                   请简述你对新媒体的理解？
+                </h3>
+                <div class="zhiyuan-p zhiyuan-textarea col-md-12">
+                    @Html.TextAreaFor(m => m.Que2, new { @class = "form-control", id = "teChang", rows = "4", cols = "5" })
+                    @Html.ValidationMessageFor(m => m.Que2, "", new { @class = "text-danger" })
+                </div>
+                <h3 class="bm_title_3">
+                    你对西财新媒体中心的官方微信官方微博是否有一定的了解？若有，请依据意向部门，谈谈个人的看法，意见或建议:
+                </h3>
+                <div class="zhiyuan-p zhiyuan-textarea col-md-12">
+                    @Html.TextAreaFor(m => m.Que3, new { @class = "form-control", rows = "4", cols = "5" })
+                    @Html.ValidationMessageFor(m => m.Que3, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group" id="submit">
+                    <div class="col-md-offset-1 col-md-2">
+                        <input type="submit" class="btn btn-default" value="提交" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

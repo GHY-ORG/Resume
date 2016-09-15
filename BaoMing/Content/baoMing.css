@@ -1,0 +1,334 @@
+﻿body {
+    font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    display: block;
+    float: left;
+    width: 100%;
+}
+/*********************************************** head ***********************************************/
+.head {
+    background: rgb(255,136,64);
+}
+
+    .head .navbar-brand {
+        padding: 0 15px;
+    }
+
+@media(min-width: 320px) {
+    .head .navbar-brand #brand {
+        display: block;
+    }
+
+    .head .navbar-brand #brand_small {
+        display: none;
+    }
+}
+
+@media(max-width: 320px) {
+    .head .navbar-brand #brand {
+        display: none;
+    }
+
+    .head .navbar-brand #brand_small {
+        display: block;
+        margin-left: 20px;
+    }
+}
+
+
+
+.head a {
+    color: white;
+    border-bottom: 2px solid rgb(255,136,64);
+}
+
+    .head a:hover {
+        color: white;
+    }
+
+    .head a.active {
+        border-bottom: 2px solid white;
+    }
+
+.head .nav > li > a:hover, .nav > li > a:focus, .nav > li > a:active {
+    background-color: rgb(255,136,64);
+    border-bottom-color: white;
+}
+
+.head .navbar-toggle {
+    border-color: #fff;
+}
+
+    .head .navbar-toggle:focus {
+        outline: 0;
+    }
+
+    .head .navbar-toggle .icon-bar {
+        background-color: #ffffff;
+    }
+
+/*********************************************** footer ***********************************************/
+.footer {
+    background-color: #dfdfdf;
+}
+
+.footer-main {
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+    .footer-main .footer_logo img {
+        background-color: rgb(255,136,64);
+    }
+
+    .footer-main .footer_row_1 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+        .footer-main .footer_row_1 address {
+            margin-bottom: 0;
+        }
+
+    .footer-main .footer_row_2 {
+        padding-bottom: 20px;
+    }
+
+    .footer-main .footer_row_3 p {
+        text-align: center;
+    }
+
+/*********************************************** main ***********************************************/
+.main-z {
+    margin: auto;
+    color: #828282;
+}
+
+h3.bm_title_3 {
+    font-weight: bold;
+    color: #5d5c5c;
+}
+
+.know1 {
+    /*height: 120px;*/
+    float: left;
+    margin-bottom: 10px;
+}
+
+.knowUs {
+    width: 100%;
+    height: 40px;
+    float: left;
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 30px;
+    color: #5d5d5d;
+}
+
+    .knowUs span {
+        padding-left: 5px;
+        font-size: 10px;
+        color: rgb(172,172,172);
+    }
+
+.knowUs1 {
+    width: 100%;
+    height: 23px;
+    line-height: 23px;
+    font-size: 18px;
+    color: rgb(147,147,147);
+    float: left;
+}
+
+.know-line {
+    width: 60px;
+    height: 3px;
+    float: left;
+    background: rgb(255,115,31);
+}
+
+@media(max-width: 600px) {
+    .knowUs {
+        height: 30px;
+        font-size: 20px;
+    }
+
+    .knowUs1 {
+        line-height: 15px;
+        font-size: 12px;
+    }
+
+    h3.bm_title_3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 550px) {
+    .submit-content .col-xs-3,
+    .submit-content .col-xs-9 {
+        width: 100%;
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+}
+
+.submit-content .bm_lable_in {
+    white-space: nowrap;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.submit-content .bm_lable_in_long {
+    font-size: 18px;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.submit-content .zhiyuan-textarea textarea {
+    text-align: left;
+    /*margin-left: 20px;*/
+}
+
+.zhiyuan {
+    width: 100%;
+    line-height: 50px;
+    font-size: 20px;
+    float: left;
+}
+
+.zhiyuan-k {
+    /*float: left;*/
+}
+
+    .zhiyuan-k:after {
+        display: table;
+        content: "";
+        clear: both;
+    }
+
+    .zhiyuan-k input {
+        width: 30px;
+        height: 30px;
+        float: left;
+    }
+
+    .zhiyuan-k .radio label {
+        padding: 5px 10px;
+        font-size: 18px;
+        display: inline-block;
+        font-weight: bold;
+    }
+
+.zhiyuan-p {
+    padding-bottom: 10px;
+    font-size: 18px;
+    float: left;
+}
+
+    .zhiyuan-p p {
+        height: 30px;
+        line-height: 30px;
+        float: left;
+    }
+
+.zhiyuan-textarea {
+    width: 100%;
+}
+
+    .zhiyuan-textarea textarea {
+        clear: both;
+        float: left;
+        width: 100%;
+        height: 230px;
+        margin-top: 10px;
+        padding: 5px 5px 0 5px;
+        font-size: 16px;
+    }
+
+.big-font {
+    font-size: 16px;
+}
+
+#submit {
+    float: left;
+    margin-top: 10px;
+    margin-left: 0;
+}
+
+@media (max-width: 768px) {
+    .zhiyuan-textarea textarea {
+        max-width: 750px;
+    }
+}
+
+@media (min-width: 768px) {
+    .head .container {
+        max-width: inherit;
+    }
+
+    .zhiyuan-textarea textarea {
+        max-width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .zhiyuan-textarea textarea {
+        max-width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .main-z {
+        width: 980px;
+    }
+
+    .zhiyuan-textarea textarea {
+        max-width: 950px;
+    }
+
+    .footer-main {
+        width: 980px;
+    }
+}
+
+/************************** 多选框样式 start **************************/
+.chk {
+    display: none;
+}
+
+    .chk + input + label.chk_label {
+        background-color: #FFF;
+        border: 1px solid #C1CACA;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+        margin-right: 7px !important;
+        padding: 10px !important;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+        .chk + input + label.chk_label:active {
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+    .chk:checked + input + label.chk_label {
+        background-color: #ECF2F7;
+        border: 1px solid #92A1AC;
+        color: #243441;
+    }
+
+        .chk:checked + input + label.chk_label:after {
+            content: '\2714';
+            position: absolute;
+            top: 0px;
+            left: 15px;
+            color: #758794;
+            /*width: 100%;*/
+            text-align: center;
+            font-size: 1.4em;
+            padding: 1px 0 0 0;
+            vertical-align: text-top;
+        }
+/************************** 多选框样式 end **************************/

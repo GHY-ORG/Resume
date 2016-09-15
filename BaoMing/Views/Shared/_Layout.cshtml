@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+
+</head>
+<body>
+    <div class="navbar navbar-fixed-top head">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="http://ghy.swufe.edu.cn" target="_blank" class="navbar-brand">
+                    <img src="~/img/ghy_logo.png" height="50" width="200" id="brand" />
+                    <img src="~/img/ghy_logo_small.png" height="50" width="50" id="brand_small" />
+                </a>
+            </div>
+            <div class="navbar-collapse collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="http://ghy.swufe.edu.cn" title="首页">首页</a></li>
+                    <li><a href="http://ghy.swufe.edu.cn/aboutus" title="关于我们">关于我们</a></li>
+                    <li><a href="http://ghy.swufe.edu.cn/aboutus/#2" title="成员名单">成员名单</a></li>
+                    <li><a href="http://ghy.swufe.edu.cn/aboutus/#3" title="加入我们">加入我们</a></li>
+                    <li><a href="http://ghy.swufe.edu.cn/aboutus/#4" title="广告宣传">广告宣传</a></li>
+                    <li><a href="http://ghy.swufe.edu.cn/aboutus/#5" title="合作伙伴">合作伙伴</a></li>
+                    <li><a href="http://diary.ghy.cn/" title="网站日志" target="_blank">网站日志</a></li>
+                    <li>@Html.ActionLink("简历投递", "Index", "BaoMing", null, new { @class = "active" })</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <div class="footer">
+        <div class="footer-main">
+            <div class="row footer_logo visible-md visible-lg">
+                <img src="~/img/ghy_logo.png" height="83" width="321" alt="">
+            </div>
+            <div class="row  footer_row_1 visible-md visible-lg">
+                <div class="col-md-8">
+                    <div class="row">
+                        Copyright 2001-2014 GHY.cn. All rights reserved. 蜀ICP备07004602号
+                    </div>
+                    <div class="row">
+                        西南财经大学党委宣传统战部 前进动力工作室
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <address>
+                        <strong class="col-md-4">Phone:</strong>028-87092700
+                    </address>
+                    <address>
+                        <strong class="col-md-4">Email:</strong>ghyers@gmail.com
+                    </address>
+                    <address>
+                        <strong class="col-md-4">Addres</strong>腾骧楼422室 前进动力工作室
+                    </address>
+                </div>
+            </div>
+            <div class="row footer_row_2  visible-md visible-lg">
+                ©@DateTime.Now.Year GHY.CN All rights reserved
+            </div>
+            <div class="row footer_row_3 visible-xs visible-sm">
+                <p>Copright ©@DateTime.Now.Year GHY All Rights Reserved</p>
+                <p>tel:028-87092700 emial:fhyers@gmail.com</p>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/js_bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
