@@ -1,8 +1,4 @@
 ﻿using BaoMing.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace BaoMing.Controllers
@@ -35,7 +31,7 @@ namespace BaoMing.Controllers
                     ModelState.AddModelError("ZhiYuan", "至少选择一项志愿部门/子网");
                     return View(models);
                 }
-                if (eM.ghy_SavetoExcel(models))
+                if (eM.SavetoExcel(models,"ghy_BaoMing"))
                 {
                     return Content("<script>alert('报名成功');window.location.href='/';</script>");
                 }
@@ -69,7 +65,7 @@ namespace BaoMing.Controllers
                     ModelState.AddModelError("yixiang", "至少选择一项意向组别");
                     return View(models);
                 }
-                if (eM.xbjzt_SavetoExcel(models))
+                if (eM.SavetoExcel(models, "xbjzt_BaoMing"))
                 {
                     //return Content("<script>alert('报名成功');window.location.href='http://ghy.swufe.edu.cn/aboutus';</script>");
                     return Content("<script>alert('报名成功');window.location.href='/';</script>");
@@ -100,7 +96,7 @@ namespace BaoMing.Controllers
                     ModelState.AddModelError("yixiang", "至少选择一项意向部门");
                     return View(models);
                 }
-                if (eM.xywh_SavetoExcel(models))
+                if (eM.SavetoExcel(models, "xywh_BaoMing"))
                 {
                     //return Content("<script>alert('报名成功');window.location.href='http://ghy.swufe.edu.cn/aboutus';</script>");
                     return Content("<script>alert('报名成功');window.location.href='/';</script>");
@@ -126,7 +122,7 @@ namespace BaoMing.Controllers
 
             if (ModelState.IsValid)
             {
-                if (eM.xmtzx_SavetoExcel(models))
+                if (eM.SavetoExcel(models, "xmtzx_BaoMing"))
                 {
                     //return Content("<script>alert('报名成功');window.location.href='http://ghy.swufe.edu.cn/aboutus';</script>");
                     return Content("<script>alert('报名成功');window.location.href='/';</script>");
@@ -157,7 +153,7 @@ namespace BaoMing.Controllers
                     ModelState.AddModelError("yixiang", "至少选择一项意向部门");
                     return View(models);
                 }
-                if (eM.xczs_SavetoExcel(models))
+                if (eM.SavetoExcel(models, "xczs_BaoMing"))
                 {
                     //return Content("<script>alert('报名成功');window.location.href='http://ghy.swufe.edu.cn/aboutus';</script>");
                     return Content("<script>alert('报名成功');window.location.href='/';</script>");

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
 using System.Reflection;
-using System.Web;
-using System.Web.UI.WebControls;
 
 namespace BaoMing.Controllers
 {
@@ -25,35 +19,6 @@ namespace BaoMing.Controllers
             }
             return false;
         }
-
-        /// <summary>
-        /// 判断对象中的数据是否为空 是则并赋予值为"空"
-        /// </summary>
-        /// <param name="models"></param>
-        public static void ghy_IsModelNull(Models.GhyModels models)
-        {
-            if (models.Sex == null)
-            {
-                models.Sex = "空";
-            }
-
-            if (models.Birth == null)
-            {
-                models.Birth = "空";
-            }
-            if (models.QQ == null)
-            {
-                models.QQ = "空";
-            }
-            if (models.Email == null)
-            {
-                models.Email = "空";
-            }
-            if (models.TeChang == null)
-            {
-                models.TeChang = "空";
-            }
-        }
         #endregion
 
         #region 校园文化研究社
@@ -69,35 +34,6 @@ namespace BaoMing.Controllers
                 return true;
             }
             return false;
-        }
-
-        /// <summary>
-        /// 判断对象中的数据是否为空
-        /// </summary>
-        /// <param name="models"></param>
-        public static void xywh_IsModelNull(Models.XywhModels models)
-        {
-            Models.XywhModels xywhModels = new Models.XywhModels();
-            PropertyInfo[] propertys = xywhModels.GetType().GetProperties();
-            foreach (PropertyInfo property in propertys)
-            {
-                if (property.GetValue(models) == null)
-                {
-                    if (property.PropertyType == typeof(string))
-                    {
-                        property.SetValue(models, "空");
-                    }
-                    //if (property.PropertyType == typeof(CheckBox))
-                    //{
-                    //    property.SetValue(models, "空");
-                    //}
-                    if (property.PropertyType == typeof(DateTime))
-                    {
-                        property.SetValue(models, DateTime.Today);
-                    }
-                }
-
-            }
         }
         #endregion
 
@@ -115,66 +51,9 @@ namespace BaoMing.Controllers
             }
             return false;
         }
-
-        /// <summary>
-        /// 判断对象中的数据是否为空
-        /// </summary>
-        /// <param name="models"></param>
-        public static void xbjzt_IsModelNull(Models.XbjztModels models)
-        {
-            Models.XbjztModels xbjztModels = new Models.XbjztModels();
-            PropertyInfo[] propertys = xbjztModels.GetType().GetProperties();
-            foreach (PropertyInfo property in propertys)
-            {
-                if (property.GetValue(models) == null)
-                {
-                    if (property.PropertyType == typeof(string))
-                    {
-                        property.SetValue(models, "空");
-                    }
-                    //if (property.PropertyType == typeof(CheckBox))
-                    //{
-                    //    property.SetValue(models, "空");
-                    //}
-                    if (property.PropertyType == typeof(DateTime))
-                    {
-                        property.SetValue(models, DateTime.Today);
-                    }
-                }
-
-            }
-        }
         #endregion
 
         #region 新媒体中心
-        /// <summary>
-        /// 判断对象中的数据是否为空
-        /// </summary>
-        /// <param name="models"></param>
-        public static void xmtzx_IsModelNull(Models.XmtzxModels models)
-        {
-            Models.XmtzxModels xmtzxModels = new Models.XmtzxModels();
-            PropertyInfo[] propertys = xmtzxModels.GetType().GetProperties();
-            foreach (PropertyInfo property in propertys)
-            {
-                if (property.GetValue(models) == null)
-                {
-                    if (property.PropertyType == typeof(string))
-                    {
-                        property.SetValue(models, "空");
-                    }
-                    //if (property.PropertyType == typeof(CheckBox))
-                    //{
-                    //    property.SetValue(models, "空");
-                    //}
-                    if (property.PropertyType == typeof(DateTime))
-                    {
-                        property.SetValue(models, DateTime.Today);
-                    }
-                }
-
-            }
-        }
         #endregion
 
         #region 西财之声广播站
@@ -190,35 +69,6 @@ namespace BaoMing.Controllers
                 return true;
             }
             return false;
-        }
-
-        /// <summary>
-        /// 判断对象中的数据是否为空
-        /// </summary>
-        /// <param name="models"></param>
-        public static void xczs_IsModelNull(Models.XczsModels models)
-        {
-            Models.XczsModels xczsModels = new Models.XczsModels();
-            PropertyInfo[] propertys = xczsModels.GetType().GetProperties();
-            foreach (PropertyInfo property in propertys)
-            {
-                if (property.GetValue(models) == null)
-                {
-                    if (property.PropertyType == typeof(string))
-                    {
-                        property.SetValue(models, "空");
-                    }
-                    //if (property.PropertyType == typeof(CheckBox))
-                    //{
-                    //    property.SetValue(models, "空");
-                    //}
-                    if (property.PropertyType == typeof(DateTime))
-                    {
-                        property.SetValue(models, DateTime.Today);
-                    }
-                }
-
-            }
         }
         #endregion
 
@@ -240,6 +90,34 @@ namespace BaoMing.Controllers
                 return true;
             }
             return false;
+        }
+
+        /// <summary>
+        /// 判断对象中的数据是否为空并赋值
+        /// </summary>
+        /// <param name="models">待判断对象模型</param>
+        public static void IsModelNull<Model>(Model models)
+        {
+            PropertyInfo[] propertys = models.GetType().GetProperties();
+            foreach (PropertyInfo property in propertys)
+            {
+                if (property.GetValue(models) == null)
+                {
+                    if (property.PropertyType == typeof(string))
+                    {
+                        property.SetValue(models, "空");
+                    }
+                    //if (property.PropertyType == typeof(CheckBox))
+                    //{
+                    //    property.SetValue(models, "空");
+                    //}
+                    if (property.PropertyType == typeof(DateTime))
+                    {
+                        property.SetValue(models, DateTime.Today);
+                    }
+                }
+
+            }
         }
         #endregion
     }

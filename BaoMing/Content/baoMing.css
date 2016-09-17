@@ -1,11 +1,16 @@
 ﻿body {
+    font-family: "Microsoft YaHei","微软雅黑",SimSun,"宋体";
     font-size: 14px;
 }
 
 h1, h2, h3, h4, h5, h6 {
     display: block;
-    float: left;
+    /*float: left;*/
     width: 100%;
+}
+
+label {
+    font-weight: normal;
 }
 /*********************************************** head ***********************************************/
 .head {
@@ -103,12 +108,13 @@ h1, h2, h3, h4, h5, h6 {
 /*********************************************** main ***********************************************/
 .main-z {
     margin: auto;
-    color: #828282;
+    /*color: #828282;*/
 }
 
 h3.bm_title_3 {
-    font-weight: bold;
-    color: #5d5c5c;
+    margin-top:30px;
+    font-size: 24px;
+    color: #000;
 }
 
 .know1 {
@@ -176,20 +182,16 @@ h3.bm_title_3 {
 
 .submit-content .bm_lable_in {
     white-space: nowrap;
-    font-size: 18px;
+    /*font-weight:normal;*/
+    font-size: 16px;
     text-align: left;
     padding-left: 50px;
 }
 
 .submit-content .bm_lable_in_long {
-    font-size: 18px;
+    font-size: 16px;
     text-align: left;
     padding-left: 50px;
-}
-
-.submit-content .zhiyuan-textarea textarea {
-    text-align: left;
-    /*margin-left: 20px;*/
 }
 
 .zhiyuan {
@@ -202,6 +204,11 @@ h3.bm_title_3 {
 .zhiyuan-k {
     /*float: left;*/
 }
+
+    .zhiyuan-k:before {
+        display: table;
+        content: "";
+    }
 
     .zhiyuan-k:after {
         display: table;
@@ -243,7 +250,7 @@ h3.bm_title_3 {
         float: left;
         width: 100%;
         height: 230px;
-        margin-top: 10px;
+        margin: 10px 20px;
         padding: 5px 5px 0 5px;
         font-size: 16px;
     }
